@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>英単語レベル</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="{{ url_for('static', filename='main.js') }}"></script>
+  <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+  <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+  <style>
+.example4{
+    background: linear-gradient(to right,#e60000,#f39800,#fff100,#009944,#0068b7,#1d2088,#920783,#e60000) 0 / 200%;
+    animation: 5s example4 linear infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+@keyframes example4{
+    100% { background-position: 200%; }
+}
+</style>
+</head>
+<body>
+  <header>
+    <div class="example4"><a href="/">YukiBBS Server</a></div>
+  <div class="header">
+      <nav class="menu">
+        <button class="btn-menu"><font color="white">Menu</font></button>
+        <ul class="menu-items">
+          <li><div class="example4"><a href="/">Home</font></a></div></li>
+          <li><a href="/use"><font color="gray">Use</font></a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <br><br>
+  {% block content %}
+  {% endblock %}
+</body>
+</html>
