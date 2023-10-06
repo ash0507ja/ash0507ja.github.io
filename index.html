@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<script src="https://cdn.jsdelivr.net/npm/@widgetbot/crate@3" async defer>
+  new Crate({
+    server: '1155029447326568478',
+    channel: '1155029447775371355',
+    glyph: ['https://cdn.discordapp.com/avatars/293731150239891456/f7d78d0c7e6522ed296bfa315b3a1969.png', '100%']
+  })
+</script>
+<div class="example4"><h1>掲示板</h1></div>
+<p>新規さんへ、まずは挨拶をしましょう！ <a href="/use">使い方</a>をよく読んでから掲示板を利用しましょう！</p>
+<p><font color="red">荒らし行為、煽り行為は禁止です。NGワードの発言も極力なくしましょう。</font></p>
+  <label for="message">メッセージ</label>
+<textarea class="textlines" id="message" rows="6" cols="100" required></textarea>
+<br>
+<label for="name">名前</label>
+<input type="text" class="textlines" id="name" value="" maxlength="25" required>　
+<label for="seed">シード</label>
+<input type="text" class="textlines" id="seed" value="" required>
+<button onclick="sendMessageByUser()">送信</button>
+<br>
+<select name="channel" id="channel">
+  <option value="main">💬|雑談</option>
+  <option value="battle">🔫|バトスタ</option>
+</select>
+スピ限<input type="checkbox" id="verify" name="verify">
+<div id="result"></div>
+{% endblock %}
